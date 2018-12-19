@@ -11,12 +11,12 @@ def parse_args():
         help='Boolean flag indicating if statements should be printed to the console.')
 
     parser.add_argument('--img_folder', type=str,
-        help='The folder name that contains images to be made into gifs', 
-        required=True)
+        required=True,
+        help='The folder name that contains images to be made into gifs')
 
     parser.add_argument('--output_file', type=str,
-        help='The folder name that contains images to be made into gifs', 
-        required=True)
+        default='animation.gif',
+        help='The output file of the animed gif')
     
     parser.add_argument('--duration', type=float,
         default=0.13,
@@ -28,17 +28,18 @@ def parse_args():
 
 def make_gif(img_folder, output_file, duration, verbose):
 
-    output_folder = os.path.join('image_output', 'alina_final_result')
+    output_folder = os.path.join(img_folder)
     if args.verbose: print(output_folder)
     
     files = os.listdir(output_folder)
     if args.verbose: print(files)
 
-    filenames = [os.path.join(output_folder, x) for x in files if x.endswith(('.png'))]
+    filenames = [os.path.join(output_folder, f) for f in files if f.endswith(('.png'))]
+
     images = list(map(lambda filename: imageio.imread(filename), filenames))
-    output_file = os.path.join(output_folder, 'animated.gif')
-    if os.path.exists(output_file): os.remove(output_file)
-    imageio.mimsave(os.path.join(output_file), images, duration = 0.13)
+    
+    imageio.mimsave(output_file, images, duration = 0.13)
+    if args.verbose: print('Wrote %s' % output_file )
 
 
 
