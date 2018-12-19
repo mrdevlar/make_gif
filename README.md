@@ -1,4 +1,4 @@
-# Animated Gif Creation Tool
+# Command Line Tool for Animated Gif Creation
 
 This is a simple Python command line tool for the creation of animated gifs.
 
