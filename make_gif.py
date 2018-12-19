@@ -15,23 +15,23 @@ def parse_args():
 
     parser.add_argument('--img_folder', type=str,
         required=True,
-        help='The folder name that contains images to be made into gifs')
+        help='The folder name that contains images to be made into a gif.')
 
     parser.add_argument('--output_file', type=str,
         default='animation.gif',
-        help='The output file of the animed gif')
+        help='The output file of the animated gif (default: %(default)s).')
     
     parser.add_argument('--duration', type=float,
         default=0.13,
-        help='Duration between frames in the animated gif (default: %(default)s)')
+        help='Duration between frames in the animated gif (default: %(default)s).')
 
     parser.add_argument('--types', nargs='+', type=str,
         default=['png', 'jpg'],
-        help='The file types to consider when making the animated gifs (default: %(default)s)')
+        help='The file types to consider when making the animated gifs (default: %(default)s).')
 
     parser.add_argument('--shuffle', 
         action='store_true',
-        help='Boolean flag indicating if statements should be printed to the console.')
+        help='Shuffles the order of the files that make up the animated gif.')
     
     args = parser.parse_args()
     return args
