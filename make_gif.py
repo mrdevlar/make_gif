@@ -47,7 +47,7 @@ def main():
     global args
     args = parse_args()
     if args.verbose: print(args)
-    make_gif(args.img_folder, args.output_file, args.duration)
+    make_gif(args.img_folder, args.output_file, args.duration, args.verbose)
     
 
 if __name__ == '__main__':
