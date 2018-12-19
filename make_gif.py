@@ -61,7 +61,7 @@ def make_gif(img_folder, output_file, duration, types, verbose, shuffle):
 def main():
     global args
     args = parse_args()
-    if args.verbose: print("Input Arguments\n" args, '\n')
+    if args.verbose: print("Input Arguments\n", args, '\n')
     
     make_gif(img_folder = args.img_folder, 
             output_file = args.output_file, 
