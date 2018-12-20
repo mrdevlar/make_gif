@@ -9,13 +9,12 @@ def parse_args():
     desc = "Makes an animated gif from a folder of pictures"  
     parser = argparse.ArgumentParser(description=desc)
 
+    parser.add_argument('img_folder', type=str,
+        help='The folder name that contains images to be made into a gif.')
+
     parser.add_argument('--verbose', 
         action='store_true',
         help='Boolean flag indicating if statements should be printed to the console.')
-
-    parser.add_argument('--img_folder', type=str,
-        required=True,
-        help='The folder name that contains images to be made into a gif.')
 
     parser.add_argument('--output_file', type=str,
         default='animation.gif',
