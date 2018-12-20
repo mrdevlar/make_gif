@@ -2,6 +2,8 @@
 
 This is a simple Python command line tool for the creation of animated gifs.
 
+![animated](https://github.com/mrdevlar/make_gif/blob/master/examples/animation.gif)
+
 ## Dependencies
 - [ImageIO](https://pypi.org/project/imageio/)
 
