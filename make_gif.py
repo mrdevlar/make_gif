@@ -24,6 +24,10 @@ def parse_args():
         default=['png', 'jpg'],
         help='The file types to consider when making the animated gifs (default: %(default)s).')
 
+    parser.add_argument('-i', '--ignore_files', nargs='+', type=str,
+        default=[],
+        help='List of files to ignore within the folder.')
+
     parser.add_argument('-s', '--shuffle', 
         action='store_true',
         help='Shuffles the order of the files that make up the animated gif.')
@@ -40,14 +44,17 @@ def parse_args():
     return args
 
 
-def make_gif(img_folder, output_file, duration, types, verbose, shuffle):
+def make_gif(img_folder, output_file, duration, types, verbose, shuffle, ignore_files):
     
     if verbose: print("Image Folder: ", img_folder, '\n')
     
     files = os.listdir(img_folder)
     if verbose: print("Input Files: \n", files, '\n')
+
+    if ignore_files: files = list(set(files)-set(ignore_files))
     
     filenames = [os.path.join(img_folder, f) for f in files if f.endswith(tuple(types))]
+
     if verbose: print("The following file types are used: ", tuple(types), '\n')
 
     if shuffle: random.shuffle(filenames)
@@ -71,7 +78,8 @@ def main():
             duration    = args.duration, 
             types       = args.types, 
             verbose     = args.verbose, 
-            shuffle     = args.shuffle)
+            shuffle     = args.shuffle,
+            ignore_files= args.ignore_files)
     
 
 if __name__ == '__main__':
