@@ -20,27 +20,31 @@ python make_gif.py --img_folder my_folder
 All the bells and whistles can be found by calling `-h`.
 
 ```
-usage: make_gif.py [-h] [--verbose] --img_folder IMG_FOLDER
-                   [--output_file OUTPUT_FILE] [--duration DURATION]
-                   [--types TYPES [TYPES ...]] [--shuffle]
+usage: make_gif.py [-h] [-v] [-o OUTPUT_FILE] [-t TYPES [TYPES ...]]
+                   [-i IGNORE_FILES [IGNORE_FILES ...]] [-s] [-d DURATION]
+                   img_folder
 
 Makes an animated gif from a folder of pictures
 
+positional arguments:
+  img_folder            The folder name that contains images to be made into a
+                        gif.
+
 optional arguments:
   -h, --help            show this help message and exit
-  --verbose             Boolean flag indicating if statements should be
+  -v, --verbose         Boolean flag indicating if statements should be
                         printed to the console.
-  --img_folder IMG_FOLDER
-                        The folder name that contains images to be made into a
-                        gif.
-  --output_file OUTPUT_FILE
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
                         The output file of the animated gif (default:
                         animation.gif).
-  --duration DURATION   Duration between frames in the animated gif (default:
-                        0.13).
-  --types TYPES [TYPES ...]
+  -t TYPES [TYPES ...], --types TYPES [TYPES ...]
                         The file types to consider when making the animated
                         gifs (default: ['png', 'jpg']).
-  --shuffle             Shuffles the order of the files that make up the
+  -i IGNORE_FILES [IGNORE_FILES ...], --ignore_files IGNORE_FILES [IGNORE_FILES ...]
+                        List of files to ignore within the folder.
+  -s, --shuffle         Shuffles the order of the files that make up the
                         animated gif.
+  -d DURATION, --duration DURATION
+                        Duration between frames in the animated gif (default:
+                        0.13).
 ```
