@@ -12,8 +12,7 @@ def parse_args():
     parser.add_argument('img_folder', type=str,
         help='The folder name that contains images to be made into a gif.')
 
-    parser.add_argument('-v', '--verbose', 
-        action='store_true',
+    parser.add_argument('-v', '--verbose', action='store_true',
         help='Boolean flag indicating if statements should be printed to the console.')
 
     parser.add_argument('-o', '--output_file', type=str,
@@ -28,8 +27,7 @@ def parse_args():
         default=[],
         help='List of files to ignore within the folder.')
 
-    parser.add_argument('-s', '--shuffle', 
-        action='store_true',
+    parser.add_argument('-s', '--shuffle', action='store_true',
         help='Shuffles the order of the files that make up the animated gif.')
     
     group = parser.add_mutually_exclusive_group()
@@ -51,7 +49,9 @@ def make_gif(img_folder, output_file, duration, types, verbose, shuffle, ignore_
     files = os.listdir(img_folder)
     if verbose: print("Input Files: \n", files, '\n')
 
-    if ignore_files: files = list(set(files)-set(ignore_files))
+    if ignore_files: 
+        files = list(set(files) - set(ignore_files))
+
     
     filenames = [os.path.join(img_folder, f) for f in files if f.endswith(tuple(types))]
 
