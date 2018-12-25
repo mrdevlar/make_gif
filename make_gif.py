@@ -18,7 +18,7 @@ def parse_args():
 
     parser.add_argument('-o', '--output_file', type=str,
         default='animation.gif',
-        help='The output file of the animated gif (default: %(default)s).')
+        help='The output file of the animated gif or webm (default: %(default)s).')
 
     parser.add_argument('-t','--types', nargs='+', type=str,
         default=['png', 'jpg'],
