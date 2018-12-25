@@ -1,5 +1,6 @@
 import argparse
 import imageio
+import moviepy.editor as mp
 import os
 import random
 
@@ -64,9 +65,19 @@ def make_gif(img_folder, output_file, duration, types, verbose, shuffle, ignore_
     
     if os.path.exists(output_file): os.remove(output_file)
     
-    imageio.mimsave(output_file, images, duration = 0.13)
+    
+    
+    if output_file.endswith('gif'):
+        imageio.mimsave(output_file, images, duration = 0.13)
+    elif output_file.endswith('webm'):
+        imageio.mimsave('temp.gif', images, duration = 0.13)
+        clip = mp.VideoFileClip('temp.gif')
+        clip.write_videofile(output_file, preset="high")
+        clip.close()
+        os.remove('temp.gif') 
     if verbose: print('Wrote %s' % output_file)
-
+    
+    # os.remove()
 
 def main():
     global args
