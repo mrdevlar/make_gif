@@ -1,11 +1,12 @@
 # Command Line Tool for Animated Gif Creation
 
-This is a simple Python command line tool for the creation of animated gifs.
+This is a simple Python command line tool for the creation of animated gifs or webms.
 
 ![animated](https://github.com/mrdevlar/make_gif/blob/master/examples/animation.gif)
 
 ## Dependencies
 - [ImageIO](https://pypi.org/project/imageio/)
+- [MoviePy](https://zulko.github.io/moviepy/)
 
 ## Installation and Use
 
@@ -35,7 +36,7 @@ optional arguments:
   -v, --verbose         Boolean flag indicating if statements should be
                         printed to the console.
   -o OUTPUT_FILE, --output_file OUTPUT_FILE
-                        The output file of the animated gif (default:
+                        The output file of the animated gif or webm (default:
                         animation.gif).
   -t TYPES [TYPES ...], --types TYPES [TYPES ...]
                         The file types to consider when making the animated
