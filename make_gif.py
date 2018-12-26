@@ -77,7 +77,6 @@ def make_gif(img_folder, output_file, duration, types, verbose, shuffle, ignore_
         os.remove('temp.gif') 
     if verbose: print('Wrote %s' % output_file)
     
-    # os.remove()
 
 def main():
     global args
