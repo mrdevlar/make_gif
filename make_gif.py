@@ -36,8 +36,7 @@ def parse_args():
     group.add_argument('-d', '--duration', type=float,
         default=0.13,
         help='Duration between frames in the animated gif (default: %(default)s).')
-    
-    # @TODO Speed Argument using count and add to group
+
     
     args = parser.parse_args()
     return args
