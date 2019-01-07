@@ -11,9 +11,9 @@ This is a simple Python command line tool for the creation of animated gifs or w
 ## Installation and Use
 
 ### Basic Usage
-Provide the `make_gif.py` script with an `--img_folder` argument followed by a folder containing 
+Provide the `make_gif.py` script with an `img_folder` argument followed by a folder containing the images you'd like turned into a gif or webm. Like so:
 ```
-python make_gif.py --img_folder my_folder
+python make_gif.py my_folder
 ```
 
 ### Advanced Usage
